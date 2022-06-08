@@ -8,6 +8,9 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import React, { useState } from 'react';
+import CustomModal from './src/components/modal/index';
+import ListItem from './src/components/list-item';
+import Input from './src/components/input';
 
 import { styles } from './styles';
 
@@ -48,15 +51,7 @@ export default function App() {
   };
 
   const renderItem = ({ item }) => (
-    <View style={styles.itemList} key={item.id}>
-      <Text>{item.value}</Text>
-      <TouchableOpacity
-        style={styles.deleteButton}
-        onPress={() => onHandlerModal(item.id)}
-      >
-        <Text style={styles.deleteButtonText}>X</Text>
-      </TouchableOpacity>
-    </View>
+    <ListItem item={item} onPress={onHandlerModal} />
   );
 
   const keyExtractor = (item) => item.id.toString();
@@ -65,12 +60,13 @@ export default function App() {
   return (
     <View style={styles.container}>
       <View style={styles.content}>
-        <TextInput
+        <Input
           placeholder="new task"
           placeholderTextColor={'red'}
           style={styles.input}
           value={text}
           onChangeText={(text) => handleOnChangeText(text)}
+          keyboardType='numeric'
         />
         <Button title="ADD" onPress={() => addItem()} color="violet" />
       </View>
@@ -95,7 +91,7 @@ export default function App() {
           keyExtractor={keyExtractor}
         />
       </View>
-      <Modal
+      <CustomModal
         animationType="slide"
         visible={modalVisible}
         onRequestClose={() => null}
@@ -118,7 +114,7 @@ export default function App() {
             color = 'violet'
           />
         </View>
-      </Modal>
+      </CustomModal>
     </View>
   );
 }
