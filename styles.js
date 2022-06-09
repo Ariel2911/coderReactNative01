@@ -13,12 +13,6 @@ export const styles = StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'center',
   },
-  // input: {
-  //   borderStyle: 'solid',
-  //   borderBottomColor:'violet',
-  //   borderBottomWidth: 1,
-  //   flex: 0.85,
-  // },
   list: {
     marginTop: 20,
     borderWidth: 1,
@@ -27,13 +21,6 @@ export const styles = StyleSheet.create({
     borderTopStartRadius: 12,
     borderColor: 'blue',
   },
-  // itemList: {
-  //   flexDirection: "row",
-  //   justifyContent: 'space-between',
-  //   alignItems: 'center',
-  //   marginVertical: 10,
-  //   marginHorizontal: 20,
-  // },
   deleteButton: {
     marginStart: 16,
     paddingVertical: 4,
@@ -56,9 +43,5 @@ export const styles = StyleSheet.create({
   modalTitleContainer: {
     flexDirection: 'row',
     alignItems: 'center',
-
-  },
-  modalTitle: {
-
   },
 });

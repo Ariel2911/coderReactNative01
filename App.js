@@ -70,20 +70,6 @@ export default function App() {
         />
         <Button title="ADD" onPress={() => addItem()} color="violet" />
       </View>
-      {/* <View style={styles.list}>
-        {
-          list.map(( { id, value } ) => (
-            <View style={styles.itemList} key={id}>
-              <Text >{value}</Text>
-              <Button
-              title='x'
-              onPress={() => removeItem(id)} 
-              color= 'red'
-            />
-            </View>
-          ))
-        }
-      </View> */}
       <View style={styles.list}>
         <FlatList
           data={list}

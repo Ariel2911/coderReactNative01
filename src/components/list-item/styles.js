@@ -1,14 +1,6 @@
 import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
-  list: {
-    marginTop: 20,
-    borderWidth: 1,
-    borderTopWidth: 16,
-    borderTopEndRadius: 12,
-    borderTopStartRadius: 12,
-    borderColor: 'blue',
-  },
   itemList: {
     flexDirection: "row",
     justifyContent: 'space-between',

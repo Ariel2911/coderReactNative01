@@ -1,12 +1,21 @@
-import React from 'react';
-import { View, Text, TouchableOpacity } from 'react-native';
+import React, { useState } from 'react';
+import { View, Text, TouchableOpacity, Button } from 'react-native';
 
 import { styles } from './styles';
 
 const ListItem = ({ item, onPress } ) => {
-  // console.warn(item);
+  const[ active, setActive ] = useState(false);
+  const onHandleActive = () => {
+    setActive(!active)
+  }
+
   return (
     <View style={styles.itemList} key={item.id}>
+      <Button 
+        title='    ' 
+        onPress={onHandleActive}
+        color={active ? 'green' : 'transparent'} 
+      />
       <Text>{item.value}</Text>
       <TouchableOpacity
         style={styles.deleteButton}
